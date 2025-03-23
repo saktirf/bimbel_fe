@@ -33,7 +33,7 @@ function deleteData(id) {
     if (!confirm('Anda akan menghapus data ini?')) {
         return;
     }
-    axiosClient.delete(`/api/program-pilihan/${id}`)
+    axiosClient.delete(`/api/siswa/${id}`)
         .then(response => {
             siswas.value = siswas.value.filter(data => data.id !== id)
         })
