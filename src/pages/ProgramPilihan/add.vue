@@ -26,8 +26,8 @@ function submit() {
             router.push({name: 'ProgramPilihan'})
         })
         .catch( error => {
-            // console.log(error.response.data);
-            errors.value = error.res.data.errors
+            console.log(error.response.data);
+            errors.value = error.response.data.errors
         })
 }
 
@@ -54,6 +54,7 @@ function goBack() {
                     v-model="data.pilihanprogram"
                     class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
             </div>
+            <p class="text-sm text-red-600">{{ errors.pilihanprogram ? errors.pilihanprogram[0] : '' }}</p>
           </div>
 
           <div class="sm:col-span-4">
@@ -66,6 +67,7 @@ function goBack() {
                     v-model="data.biayaprogram"
                     class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
             </div>
+            <p class="text-sm text-red-600">{{ errors.biayaprogram ? errors.biayaprogram[0] : '' }}</p>
           </div>
 
         </div>
