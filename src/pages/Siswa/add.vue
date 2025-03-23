@@ -37,7 +37,18 @@ const data = ref({
 
 const errors = ref({
     nama: [],
+    tempatlahir: [],
+    tanggallahir: [],
     asalsekolah: [],
+    kelas: [],
+    jeniskelamin: [],
+    alamat: [],
+    nohp: [],
+    tempat_les: [],
+    pilihanprogram: [],
+    tglpendaftaran: [],
+    status_siswa: [],
+    keterangan: [],
 })
 
 function submit() {
@@ -63,8 +74,8 @@ function submit() {
             router.push({name: 'Siswa'})
         })
         .catch( error => {
-            // console.log(error.response.data);
-            errors.value = error.res.data.errors
+            console.log(error.response.data);
+            errors.value = error.response.data.errors
         })
 }
 
@@ -91,6 +102,7 @@ function goBack() {
                     v-model="data.nama"
                     class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
             </div>
+            <p class="text-sm text-red-600">{{ errors.nama ? errors.nama[0] : '' }}</p>
           </div>
 
           <div class="sm:col-span-2">
@@ -103,6 +115,7 @@ function goBack() {
                     v-model="data.tempatlahir"
                     class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
             </div>
+            <p class="text-sm text-red-600">{{ errors.tempatlahir ? errors.tempatlahir[0] : '' }}</p>
           </div>
 
           <div class="sm:col-span-2">
@@ -115,6 +128,7 @@ function goBack() {
                     v-model="data.tanggallahir"
                     class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
             </div>
+            <p class="text-sm text-red-600">{{ errors.tanggallahir ? errors.tanggallahir[0] : '' }}</p>
           </div>
         </div>
     </div>
@@ -131,6 +145,7 @@ function goBack() {
                     v-model="data.asalsekolah"
                     class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
             </div>
+            <p class="text-sm text-red-600">{{ errors.asalsekolah ? errors.asalsekolah[0] : '' }}</p>
           </div>
 
           <div class="sm:col-span-2">
@@ -143,6 +158,7 @@ function goBack() {
                     v-model="data.kelas"
                     class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
             </div>
+            <p class="text-sm text-red-600">{{ errors.kelas ? errors.kelas[0] : '' }}</p>
           </div>
           <div class="sm:col-span-2">
             <label for="jeniskelamin" class="block font-medium text-gray-900 text-sm/6">Jenis Kelamin</label>
@@ -158,6 +174,7 @@ function goBack() {
                 </select>
                 <ChevronDownIcon class="self-center col-start-1 row-start-1 mr-2 text-gray-500 pointer-events-none size-5 justify-self-end sm:size-4" aria-hidden="true" />
             </div>
+            <p class="text-sm text-red-600">{{ errors.jeniskelamin ? errors.jeniskelamin[0] : '' }}</p>
           </div>
         </div>
     </div>
@@ -174,6 +191,7 @@ function goBack() {
                     v-model="data.alamat"
                     class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
             </div>
+            <p class="text-sm text-red-600">{{ errors.alamat ? errors.alamat[0] : '' }}</p>
           </div>
           <div class="sm:col-span-2">
             <label for="nohp" class="block font-medium text-gray-900 text-sm/6">No HP</label>
@@ -185,6 +203,7 @@ function goBack() {
                     v-model="data.nohp"
                     class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
             </div>
+            <p class="text-sm text-red-600">{{ errors.nohp ? errors.nohp[0] : '' }}</p>
           </div>
         </div>
     </div>
@@ -201,6 +220,7 @@ function goBack() {
                     v-model="data.tempat_les"
                     class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
             </div>
+            <p class="text-sm text-red-600">{{ errors.tempat_les ? errors.tempat_les[0] : '' }}</p>
           </div>
           <div class="sm:col-span-2">
             <label for="pilihanprogram" class="block font-medium text-gray-900 text-sm/6">Pilihan Program</label>
@@ -215,6 +235,7 @@ function goBack() {
                 </select>
                 <ChevronDownIcon class="self-center col-start-1 row-start-1 mr-2 text-gray-500 pointer-events-none size-5 justify-self-end sm:size-4" aria-hidden="true" />
             </div>
+            <p class="text-sm text-red-600">{{ errors.pilihanprogram ? errors.pilihanprogram[0] : '' }}</p>
           </div>
 
           <div class="sm:col-span-2">
@@ -227,6 +248,7 @@ function goBack() {
                     v-model="data.tglpendaftaran"
                     class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
             </div>
+            <p class="text-sm text-red-600">{{ errors.tglpendaftaran ? errors.tglpendaftaran[0] : '' }}</p>
           </div>
           <div class="sm:col-span-2">
             <label for="status_siswa" class="block font-medium text-gray-900 text-sm/6">Status Siswa</label>
@@ -241,6 +263,7 @@ function goBack() {
                 </select>
                 <ChevronDownIcon class="self-center col-start-1 row-start-1 mr-2 text-gray-500 pointer-events-none size-5 justify-self-end sm:size-4" aria-hidden="true" />
             </div>
+            <p class="text-sm text-red-600">{{ errors.status_siswa ? errors.status_siswa[0] : '' }}</p>
           </div>
 
           <div class="sm:col-span-8">
@@ -253,6 +276,7 @@ function goBack() {
                     v-model="data.keterangan"
                     class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
             </div>
+            <p class="text-sm text-red-600">{{ errors.keterangan ? errors.keterangan[0] : '' }}</p>
           </div>
 
         </div>
