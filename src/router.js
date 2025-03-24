@@ -21,11 +21,11 @@ const routes = [
             
             {path: "/program-pilihan", name: "ProgramPilihan", component: ProgramPilihan},
             {path: "/program-pilihan/add", name: "AddProgramPilihan", component: AddProgramPilihan},
-            {path: "/program-pilihan/edit", name: "EditProgramPilihan", component: EditProgramPilihan},
+            {path: "/program-pilihan/edit/:id", name: "EditProgramPilihan", component: EditProgramPilihan},
 
             {path: "/siswa", name: "Siswa", component: Siswa},
             {path: "/siswa/add", name: "AddSiswa", component: AddSiswa},
-            {path: "/siswa/edit", name: "EditSiswa", component: EditSiswa},
+            {path: "/siswa/edit/:id", name: "EditSiswa", component: EditSiswa},
         ],
         beforeEnter: async (to, from, next) => {
             try {

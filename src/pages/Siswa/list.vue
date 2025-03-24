@@ -25,8 +25,7 @@ function addData(id) {
 }
 
 function editData(id) {
-    console.log(id);
-    
+  router.push({name: 'EditSiswa', params: {id: id}})
 }
 
 function deleteData(id) {

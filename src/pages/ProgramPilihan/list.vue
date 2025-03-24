@@ -5,25 +5,25 @@ import axiosClient from '../../axios';
 import router from '../../router';
 
 const programs = ref({
-    id: '',
-    pilihanprogram: '',
-    biayaprogram: '',
+  id: '',
+  pilihanprogram: '',
+  biayaprogram: '',
 })
 
 onMounted( () => {
-    axiosClient.get('/api/program-pilihan')
-        .then( (response) => {
-            // console.log(response.data);
-            programs.value = response.data;
-        })
+  axiosClient.get('/api/program-pilihan')
+    .then( (response) => {
+      // console.log(response.data);
+      programs.value = response.data;
+    })
 })
 
 function addData() {
-    router.push({name: 'AddProgramPilihan'})
+  router.push({name: 'AddProgramPilihan'})
 }
 
 function editData(id) {
-    router.push({name: 'EditProgramPilihan'})
+  router.push({name: 'EditProgramPilihan', params: {id: id}})
 }
 
 function deleteData(id) {

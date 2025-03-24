@@ -103,7 +103,7 @@
   
       <header class="bg-white shadow">
         <div class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <h1 class="text-3xl font-bold tracking-tight text-gray-900">{{ $route.name }}</h1>
+          <h1 class="text-3xl font-bold tracking-tight text-gray-900">{{ headerTitle }}</h1>
         </div>
       </header>
       <main>
@@ -126,6 +126,10 @@
     const userStore = useUserStore()
 
     const user = computed(() => userStore.user)
+
+    const headerTitle = computed(() => {
+        return router.currentRoute.value.name.replace(/([a-z])([A-Z])/g, '$1 $2')
+    })
     
     const navigation = [
         { name: 'Dashboard', to: {name: 'Home'} },
